@@ -1,3 +1,5 @@
-app:
-    resource: '@AppBundle/Controller/'
-    type: annotation
+wb3_platform:
+    resource: "@WB3PlatformBundle/Resources/config/routing.yml"
+    prefix:   /
+
+

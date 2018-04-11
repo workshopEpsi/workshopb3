@@ -1,3 +1,11 @@
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+
+wb3_platform_connexionEleve:
+    path:      /loginEleve
+    defaults: { _controller: WB3PlatformBundle:ConnexionUtilisateur:connexionEleve }
+
+wb3_platform_connexionPeda:
+    path:      /loginPeda
+    defaults: { _controller: WB3PlatformBundle:ConnexionUtilisateur:connexionInterPeda }

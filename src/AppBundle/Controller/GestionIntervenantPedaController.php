@@ -1,6 +1,6 @@
 <?php
 
-namespace WB3\PlatformBundle\Controller;
+namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 

@@ -1,0 +1,238 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="tabs">
+        <input type="radio" name="tabs" id="tabone" checked="checked">
+        <label for="tabone">Espace Etudiant</label>
+        <div class="tab">
+            <div class="main-bloc1 ">
+                <div class="logo"></div>
+                <div class="text align-center">
+                    <div class="text-line1"><h1>Espace Etudiant </h1></div>
+                    <div class="text-line1">connectez-vous à votre compte personnel.</div>
+                </div>
+                <div class="form-group align-center">
+                    <input class="form-control align-center field1" type="text" id="email" name="_email" value="" placeholder="Votre email"/>
+                </div>
+                <div class="form-group align-center">
+                    <input class="form-control align-center field2" type="password" id="password" name="_password" value="" placeholder="Votre mot de passe"/>
+                </div>
+                <input type="hidden" name="_csrf_token" value="UoOIxPdfb_Pb_hP9kFQLlZVxELLya9bR230psSACvy8">
+                <div class="line-cta align-center">
+                    <input class="btn btn-primary" type="submit" name="login" value="Connexion">
+                </div>
+            </div>
+        </div>
+        <input type="radio" name="tabs" id="tabtwo">
+        <label for="tabtwo">Espace Administration</label>
+        <div class="tab">
+            <div class="main-bloc2">
+                <div class="logo"></div>
+                <div class="text align-center">
+                    <div class="text-line1"><h1>Espace Administration</h1> </div>
+                    <div class="text-line1">connectez-vous à votre compte personnel.</div>
+                </div>
+                <div class="form-group align-center">
+                    <input class="form-control align-center field1" type="text" id="email" name="_email" value="" placeholder="Votre email"/>
+                </div>
+                <div class="form-group align-center">
+                    <input class="form-control align-center field2" type="password" id="password" name="_password" value="" placeholder="Votre mot de passe"/>
+                </div>
+                <input type="hidden" name="_csrf_token" value="UoOIxPdfb_Pb_hP9kFQLlZVxELLya9bR230psSACvy8">
+                <div class="line-cta align-center">
+                    <input class="btn btn-primary" type="submit" name="login" value="Connexion">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        /*** Tabs*/
+        .tabs {
+            display: flex;
+            flex-wrap: wrap; // make sure it wraps
+        }
+        .tabs label {
+            order: 1; // Put the labels first
+        display: block;
+            padding: 1rem 2rem;
+            margin-right: 0.2rem;
+            cursor: pointer;
+            background: #90CAF9;
+            font-weight: bold;
+            transition: background ease 0.2s;
+        }
+        .tabs .tab {
+            order: 99; // Put the tabs last
+        flex-grow: 1;
+            width: 100%;
+            display: none;
+            padding: 1rem;
+            background: #fff;
+        }
+        .tabs input[type="radio"] {
+            display: none;
+        }
+        .tabs input[type="radio"]:checked + label {
+            background: #fff;
+        }
+        .tabs input[type="radio"]:checked + label + .tab {
+            display: block;
+        }
+
+        /*** Generic Styling*/
+        body {
+            background: #eee;
+            min-height: 100vh;
+            box-sizing: border-box;
+            padding-top: 10vh;
+            font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+            font-weight: 300;
+            line-height: 1.5;
+            max-width: 60rem;
+            margin: 0 auto;
+            font-size: 112%;
+        }
+
+
+        .main-bloc1 {
+            max-width: 450px;
+            height: 550px;
+            border-radius: 3px;
+            background-color: rgba(255, 255, 255, 0.7);
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .main-bloc2 {
+            max-width: 450px;
+            height: 550px;
+            border-radius: 3px;
+            background-color: rgba(255, 255, 255, 0.7);
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+
+        .text {
+            padding-top: 25px;
+            color: #3c485e;
+            font-family: 'Lato', sans-serif;
+            font-size: 16px;
+            line-height: 24px;
+            font-style: normal;
+            font-weight: 300;
+        }
+
+        .form-group {
+        }
+
+        .form-control {
+            color: #3b485e;
+            width: 350px;
+            height: 60px;
+            background-color: #f7f7f7;
+            border-color: #f7f7f7;
+            border-width: 2px;
+            border-style: solid;
+            border-top-left-radius: 1px;
+            border-top-right-radius: 1px;
+            border-bottom-right-radius: 1px;
+            border-bottom-left-radius: 1px;
+            font-family: Montserrat;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 700;
+            letter-spacing: 0px;
+            text-transform: uppercase;
+            padding-right: 23px;
+            padding-left: 23px;
+            outline-style: none;
+        }
+
+        .form-control:focus {
+            color: #3c485e;
+            background-color: #f7f7f7;
+            border-color: #e5e5e5;
+        }
+
+        .field1 {
+            margin-top: 30px;
+        }
+
+        .field2 {
+            margin-top: 20px;
+        }
+
+        .text-light {
+            font-family: Montserrat;
+            font-size: 12px;
+            text-align: left;
+            color: #3b485e;
+        }
+
+        .checkbox {
+            margin-top: 20px;
+            height: 15px;
+            position: relative;
+            display: block;
+            padding-left: 60px;
+        }
+
+        .checkbox input {
+            position: absolute;
+            margin-left: -20px;
+        }
+
+        .field3 {
+            cursor: pointer;
+        }
+
+        .align-center {
+            text-align: center;
+        }
+
+        .line-cta {
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        .btn {
+            background-color: #16b191;
+            border-color: #16b191;
+            border-width: 2px;
+            border-top-left-radius: 100px;
+            border-top-right-radius: 100px;
+            border-bottom-right-radius: 100px;
+            border-bottom-left-radius: 100px;
+            color: #ffffff;
+            font-family: Montserrat;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 700;
+            letter-spacing: 0px;
+            text-transform: uppercase;
+            height: 40px;
+            padding: 0 45px;
+            cursor: pointer;
+            outline-style: none;
+        }
+
+        .btn:hover {
+            color: #3c485e;
+            background-color: #ffffff;
+            border-color: #16b191;
+            outline-style: none;
+        }
+
+
+
+
+    </style>
+{% endblock %}

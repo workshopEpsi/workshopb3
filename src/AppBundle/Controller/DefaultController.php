@@ -15,7 +15,7 @@ class DefaultController extends Controller
     public function indexAction(Request $request, SessionInterface $session)
     {
         $eleve = $session->get('eleve');
-        $peda = $ session->get('peda');
+        $peda = $session->get('peda');
 
         if (isset($eleve))
                return $this->render('Etudiant/EspaceEtudiant.html.twig');

@@ -12,6 +12,8 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 class DefaultController extends Controller
 {
 
+
+
     public function indexAction(Request $request, SessionInterface $session)
     {
         $eleve = $session->get('eleve');
@@ -24,6 +26,7 @@ class DefaultController extends Controller
         else
             return $this->render('index.html.twig');
     }
+
 
 
 

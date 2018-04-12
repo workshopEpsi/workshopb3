@@ -1,55 +1,87 @@
-{% extends 'base.html.twig.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block body %}
-
     <div class="container">
         <div class="row">
-
             <div class="receipt-main col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
+
                 <div class="row">
                     <div class="receipt-header">
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="receipt-right">
-                                <h3>Nom Etudiant </h3>
-                                <h3>Nom Projet En cours</h3>
-                                <h3>Date début/Fin projet</h3>
+                                <h3>Nom Intervenant</h3>
                             </div>
                         </div>
                     </div>
-
                     <div class="receipt-header">
                         <div class="col-xs-6 col-sm-6 col-md-6">
-                            <div class="receipt-leftt">
-                                <h3>Nom de Groupe</h3>
-                                <h3>Nombre de jeton Restant</h3>
+                            <div class="receipt-left">
+                                <h3> Nombre de jeton </h3>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <div>
                     <table class="table table-bordered">
                         <thead>
-                            <tr>
-                                <th>Liste des étudiant</th>
-                            </tr>
+                        <tr>
+                            <th>Nom de groupe</th>
+                            <th>Nom du sujet</th>
+                        </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="col-md-9">Etudiant 1</td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-9">Etudiant 2</td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-9">Etudiant 3</td>
-                            </tr>
+                        <tr>
+                            <td class="col-md-9" href="#" data-toggle="modal" data-target="#Repondre">Groupe 1</td>
+                            <td class="col-md-9" href="#" data-toggle="modal" data-target="#Repondre">Problème BDD</td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-9" href="#" data-toggle="modal" data-target="#Repondre">Groupe 2</td>
+                            <td class="col-md-9" href="#" data-toggle="modal" data-target="#Repondre">Problème designe</td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-9" href="#" data-toggle="modal" data-target="#Repondre">Groupe 3</td>
+                            <td class="col-md-9" href="#" data-toggle="modal" data-target="#Repondre">Problème 1</td>
+                        </tr>
                         </tbody>
                     </table>
+                    <!-- Repondre-->
+                    <div class="modal fade" id="Repondre" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content test-container" id="mail-container">
+                                <form class="form-horizontal" id="formContact" action="mail_handler.php" method="post" name="form">
+                                    <div class="test-container2">
+                                        <div class="modal-header">
+                                            <h2 class="text-mail text-center" id="headtext"> Répondre Au groupe</h2>
+                                            <h4 class="text-left"> Nom groupe</h4>
+                                            <h4 class="text-left"> Nom du sujet</h4>
+                                            <h4 class="alert alert-success text-center"> Message envoyer par le groupe</h4>
+                                        </div>
+                                        <div class="modal-body" id="bodymail">
+                                            <div class="form-group">
+                                                <label for="message" class="col-sm-3 col-sm-offset-1 control-label">Message </label>
+                                                <div class="col-sm-8">
+                                                    <textarea type="textarea" name="message" id="message" class="form-control" cols="20" rows="5" placeholder="Entrer votre Message..."></textarea>
+                                                </div>
+                                            </div><!-- End form group -->
+
+                                        </div>
+                                        <div class="modal-footer" id="footmail">
+                                            <div class="row col-md-4 col-md-offset-7">
+                                                <button type="button" data-dismiss="modal" id="Style-bouton">
+                                                    <h6> Annuler </h6>
+                                                </button>
+                                                <button type="submit" name="submit" id="Style-bouton">
+                                                    <h6> Répondre </h6>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div> <!-- End modal-content -->
+                        </div> <!-- End modal-dialog -->
+                    </div> <!-- End mymodal -->
+                    <!--Fin Repondre -->
                 </div>
-                <button type="button" class="btn btn-primary">Créer groupe</button>
-                <button type="button" class="btn btn-success">Rejoindre Groupe</button>
-                <button type="button" class="btn btn-danger">Contacter Intervenant</button>
             </div>
         </div>
     </div>

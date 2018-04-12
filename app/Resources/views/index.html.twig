@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {% if erreur is defined%}
+    {% for erreur in app.flashes('erreur')%}
         <div class="alert alert-danger" role="alert">
         {{ erreur }}
         </div>
+    {% endfor %}
 
-    {% endif %}
     <div class="tabs">
         <input type="radio" name="tabs" id="tabone" checked="checked">
         <label for="tabone">Espace Etudiant</label>
@@ -17,12 +17,12 @@
                     <div class="text-line1"><h1>Espace Etudiant </h1></div>
                     <div class="text-line1">connectez-vous à votre compte personnel.</div>
                 </div>
-                <form method="POST" action="{{path( 'AccueilEleve') }}">
+                <form method="POST" action="{{path( 'ConnexionEleve') }}">
                 <div class="form-group align-center">
-                    <input class="form-control align-center field1" type="email" id="email" name="_email" value="" placeholder="Votre email" required>
+                    <input class="form-control align-center field1" type="email" id="emailEleve" name="emailEleve" placeholder="Votre email" required>
                 </div>
                 <div class="form-group align-center">
-                    <input class="form-control align-center field2" type="password" id="password" name="_password" value="" placeholder="Votre mot de passe" required>
+                    <input class="form-control align-center field2" type="password" id="passwordEleve" name="passwordEleve" placeholder="Votre mot de passe" required>
                 </div>
                 <div class="line-cta align-center">
                     <input class="btn btn-primary" type="submit" name="login" value="Connexion">
@@ -39,12 +39,12 @@
                     <div class="text-line1"><h1>Espace Administration</h1> </div>
                     <div class="text-line1">connectez-vous à votre compte personnel.</div>
                 </div>
-                <form method="POST" action="{{path( 'AccueilPeda' )}}">
+                <form method="POST" action="{{path( 'ConnexionPeda' )}}">
                 <div class="form-group align-center">
-                    <input class="form-control align-center field1" type="email" id="email" name="_email" value="" placeholder="Votre email" required>
+                    <input class="form-control align-center field1" type="email" id="email" name="emailPeda" placeholder="Votre email" required>
                 </div>
                 <div class="form-group align-center">
-                    <input class="form-control align-center field2" type="password" id="password" name="_password" value="" placeholder="Votre mot de passe" required>
+                    <input class="form-control align-center field2" type="password" id="password" name="passwordPeda" placeholder="Votre mot de passe" required>
                 </div>
                 <div class="line-cta align-center">
                     <input class="btn btn-primary" type="submit" name="login" value="Connexion">

@@ -1,6 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
 
     <div class="container">
         <div class="row">
@@ -9,20 +13,7 @@
                 <div class="row">
                     <div class="receipt-header">
                         <div class="col-xs-6 col-sm-6 col-md-6">
-                            <div class="receipt-right">
-                                <h3>Nom Etudiant </h3>
-                                <h3>Nom Projet En cours</h3>
-                                <h3>Date début/Fin projet</h3>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="receipt-header">
-                        <div class="col-xs-6 col-sm-6 col-md-6">
-                            <div class="receipt-leftt">
-                                <h3>Nom de Groupe</h3>
-                                <h3>Nombre de jeton Restant</h3>
-                            </div>
+                            <h4 class="text-center">Nom Responsable pédagogique</h4>
                         </div>
                     </div>
                 </div>
@@ -30,27 +21,102 @@
                 <div>
                     <table class="table table-bordered">
                         <thead>
-                            <tr>
-                                <th>Liste des étudiants</th>
-                            </tr>
+                        <tr>
+                            <th>Liste des groupes</th>
+                            <th>Paramètres</th>
+                        </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="col-md-9">Etudiant 1</td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-9">Etudiant 2</td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-9">Etudiant 3</td>
-                            </tr>
+                        <tr>
+                            <td class="col-md-9">Groupe 1</td>
+                            <td class="text-center">
+                                <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+                                <a href="#"><span class="glyphicon glyphicon-trash"></span></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-9">Groupe 2</td>
+                            <td class="text-center">
+                                <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+                                <a href="#"><span class="glyphicon glyphicon-trash"></span></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-9">Groupe 3</td>
+                            <td class="text-center">
+                                <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+                                <a href="#"><span class="glyphicon glyphicon-trash"></span></a>
+                            </td>
+                        </tr>
                         </tbody>
                     </table>
-                </div>
-                <button type="button" class="btn btn-primary" href="#" data-toggle="modal" data-target="#CreerGroupe">Créer groupe</button>
-                <button type="button" class="btn btn-success" href="#" data-toggle="modal" data-target="#RejoindreGroupe">Rejoindre Groupe</button>
-                <button type="button" class="btn btn-danger" href="#" data-toggle="modal" data-target="#ContacterIntervenant">Contacter Intervenant</button>
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>Liste des sujets</th>
+                            <th>Paramètres</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="col-md-9">Sujet 1</td>
+                            <td class="text-center">
+                                <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+                                <a href="#"><span class="glyphicon glyphicon-trash"></span></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-9">Sujet 2</td>
+                            <td class="text-center">
+                                <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+                                <a href="#"><span class="glyphicon glyphicon-trash"></span></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-9">Sujet 3</td>
+                            <td class="text-center">
+                                <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+                                <a href="#"><span class="glyphicon glyphicon-trash"></span></a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>Liste des intervenants</th>
+                            <th>Paramètres</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="col-md-9">Intervenant 1</td>
+                            <td class="text-center">
+                                <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+                                <a href="#"><span class="glyphicon glyphicon-trash"></span></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-9">Intervenant 2</td>
+                            <td class="text-center">
+                                <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+                                <a href="#"><span class="glyphicon glyphicon-trash"></span></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-9">Intervenant 3</td>
+                            <td class="text-center">
+                                <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+                                <a href="#"><span class="glyphicon glyphicon-trash"></span></a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <button type="button" class="btn btn-primary" href="#" data-toggle="modal" data-target="#CreerGroupe">Créer groupe</button>
+                    <button type="button" class="btn btn-success" href="#" data-toggle="modal" data-target="#CreerSujet">Créer Sujet</button>
+                    <button type="button" class="btn btn-danger" href="#" data-toggle="modal" data-target="#CreerIntervenant">Créer Intervenant</button>
 
+                </div>
                 <!-- Créer groupe-->
                 <div class="modal fade" id="CreerGroupe" role="dialog">
                     <div class="modal-dialog">
@@ -98,72 +164,29 @@
                 </div> <!-- End mymodal -->
                 <!--Fin Créer Groupe -->
 
-                <!-- Rejoindre Groupe-->
-                <div class="modal fade" id="RejoindreGroupe" role="dialog">
+                <!-- Créer Sujet-->
+                <div class="modal fade" id="CreerSujet" role="dialog">
                     <div class="modal-dialog">
                         <div class="modal-content test-container" id="mail-container">
                             <form class="form-horizontal" id="formContact" action="mail_handler.php" method="post" name="form">
                                 <div class="test-container2">
                                     <div class="modal-header">
-                                        <h2 class="text-mail text-center" id="headtext"> Rejoindre Groupe</h2>
+                                       <h2 class="text-mail text-center" id="headtext"> Créer Nouveau Sujet</h2>
                                     </div>
                                     <div class="modal-body" id="bodymail">
                                         <div class="form-group">
-                                            <label for="name" class="col-sm-3 col-sm-offset-1 control-label">Nom de Groupe  </label>
+                                            <label for="name" class="col-sm-3 col-sm-offset-1 control-label">Nom Sujet  </label>
                                             <div class="col-sm-8">
                                                 <input type="text" class="form-control" id="name">
                                             </div>
                                         </div> <!-- End form group -->
-                                    </div>
-                                    <div class="modal-footer" id="footmail">
-                                        <div class="row col-md-4 col-md-offset-7">
-                                            <button type="submit" name="submit" id="Style-bouton">
-                                                <h6> Rejoindre Groupe </h6>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div> <!-- End modal-content -->
-                    </div> <!-- End modal-dialog -->
-                </div> <!-- End mymodal -->
-                <!--Fin Rejoindre Groupe -->
+                                        <div class="form-group">
+                                            <label for="name" class="col-sm-3 col-sm-offset-1 control-label">Année du sujet  </label>
+                                            <div class="col-sm-8">
+                                                <input class="form-control" type="text"/>
 
-                <!-- Contacter Intervenant-->
-                <div class="modal fade" id="ContacterIntervenant" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content test-container" id="mail-container">
-                            <form class="form-horizontal" id="formContact" action="mail_handler.php" method="post" name="form">
-                                <div class="test-container2">
-                                    <div class="modal-header">
-                                        <h2 class="text-mail text-center" id="headtext"> Contacter Intervenant</h2>
-                                    </div>
-                                    <div class="modal-body" id="bodymail">
-                                        <div class="form-group">
-                                            <label for="name" class="col-sm-3 col-sm-offset-1 control-label">Nom intervenant </label>
-                                            <div class="col-sm-8">
-                                                <input type="text" class="form-control" id="name">
                                             </div>
                                         </div> <!-- End form group -->
-                                        <div class="form-group">
-                                            <label for="name" class="col-sm-3 col-sm-offset-1 control-label">Spécialité Intervenant  </label>
-                                            <div class="col-sm-8">
-                                                <input type="text" class="form-control" id="name">
-                                            </div>
-                                        </div> <!-- End form group -->
-                                        <div class="form-group">
-                                            <label for="name" class="col-sm-3 col-sm-offset-1 control-label">Sujet </label>
-                                            <div class="col-sm-8">
-                                                <input type="text" class="form-control" id="name">
-                                            </div>
-                                        </div> <!-- End form group -->
-                                        <div class="form-group">
-                                            <label for="message" class="col-sm-3 col-sm-offset-1 control-label">Message </label>
-                                            <div class="col-sm-8">
-                                                <textarea type="textarea" name="message" id="message" class="form-control" cols="20" rows="5" placeholder="Entrer votre Message..."></textarea>
-                                            </div>
-                                        </div><!-- End form group -->
-
                                     </div>
                                     <div class="modal-footer" id="footmail">
                                         <div class="row col-md-4 col-md-offset-7">
@@ -171,7 +194,7 @@
                                                 <h6> Annuler </h6>
                                             </button>
                                             <button type="submit" name="submit" id="Style-bouton">
-                                                <h6> Envoyer </h6>
+                                                <h6> Créer Sujet </h6>
                                             </button>
                                         </div>
                                     </div>
@@ -180,7 +203,41 @@
                         </div> <!-- End modal-content -->
                     </div> <!-- End modal-dialog -->
                 </div> <!-- End mymodal -->
-                <!--Fin Contacter Intervenant -->
+                <!--Fin Créer Sujet -->
+
+                <!-- Créer Intervenant-->
+                <div class="modal fade" id="CreerIntervenant" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content test-container" id="mail-container">
+                            <form class="form-horizontal" id="formContact" action="mail_handler.php" method="post" name="form">
+                                <div class="test-container2">
+                                    <div class="modal-header">
+                                        <h2 class="text-mail text-center" id="headtext"> Créer Nouveau Intervenant</h2>
+                                    </div>
+                                    <div class="modal-body" id="bodymail">
+                                        <div class="form-group">
+                                            <label for="name" class="col-sm-3 col-sm-offset-1 control-label">Nom Intervenant  </label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" id="name">
+                                            </div>
+                                        </div> <!-- End form group -->
+                                    </div>
+                                    <div class="modal-footer" id="footmail">
+                                        <div class="row col-md-4 col-md-offset-7">
+                                            <button type="button" data-dismiss="modal" id="Style-bouton">
+                                                <h6> Annuler </h6>
+                                            </button>
+                                            <button type="submit" name="submit" id="Style-bouton">
+                                                <h6> Créer Intervenant </h6>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div> <!-- End modal-content -->
+                    </div> <!-- End modal-dialog -->
+                </div> <!-- End mymodal -->
+                <!--Fin Créer Intervenant -->
             </div>
         </div>
     </div>

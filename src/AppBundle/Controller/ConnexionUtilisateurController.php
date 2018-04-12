@@ -12,15 +12,18 @@ class ConnexionUtilisateurController extends Controller
 
     public function connexionEleveAction(Request $request, SessionInterface $session)
     {
-        $login = $request->request->get('_email');
-        $mdp = $request->request->get('_password');
+        $login = $request->request->get('emailEleve');
+        $mdp = $request->request->get('passwordEleve');
 
         $eleve = $this->getDoctrine()->getRepository('AppBundle:Etudiants')->findBy(['email' => $login]);
 
         $reponse = null;
 
         if (!$eleve) {
-            $reponse = $this->render('index.html.twig', array('erreur' => "Mot de passe/Login incorrect"));
+
+            $this->addFlash('erreur',"Mot de passe/Login incorrect");
+
+            $reponse = $this->redirectToRoute("homepage");
             return $reponse;
         }
 
@@ -29,7 +32,8 @@ class ConnexionUtilisateurController extends Controller
             $session->set('eleve', $eleve[0]);
             return $reponse;
         } else {
-            $reponse = $this->render('index.html.twig', array('erreur' => "Mot de passe/Login incorrect"));
+            $this->addFlash('erreur',"Mot de passe/Login incorrect");
+            $reponse = $this->redirectToRoute("homepage");
             return $reponse;
         }
 
@@ -41,8 +45,8 @@ class ConnexionUtilisateurController extends Controller
 
     public function connexionInterPedaAction(Request $request)
     {
-        $login = $request->request->get('_email');
-        $mdp = $request->request->get('_password');
+        $login = $request->request->get('emailPeda');
+        $mdp = $request->request->get('passwordPeda');
 
         $intervenant = $this->getDoctrine()->getRepository('AppBundle:Intervenants')->findBy(['email' => $login]);
 

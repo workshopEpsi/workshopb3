@@ -1,0 +1,23 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+homepage:
+    path:   /
+    defaults:  { _controller: AppBundle:Default:index}
+
+deconnexion:
+    path: /deconnexion
+    defaults: {_controller: AppBundle:Default:deconnexion}
+
+ConnexionEleve:
+    path: /AccueilEleve
+    defaults: {_controller: AppBundle:ConnexionUtilisateur:connexionEleve}
+
+ConnexionPeda:
+    path: /AccueilPeda
+    defaults: {_controller: AppBundle:ConnexionUtilisateur:connexionInterPeda}
+
+creerGroupe:
+    path: /creergroupe
+    defaults: {_controller: AppBundle:GestionGroupe:creerGroupe}

@@ -13,34 +13,27 @@ class DefaultController extends Controller
 {
 
 
-
     public function indexAction(Request $request, SessionInterface $session)
     {
         $eleve = $session->get('eleve');
-        $peda = $session->get('peda');
+        $peda = $session->get('intervenant');
 
-        if (isset($eleve))
-               return $this->render('Etudiant/EspaceEtudiant.html.twig');
-        elseif (isset($peda))
-               return $this->render('Intervenant/EspaceIntervenant.html.twig');
-        else
+        if (isset($eleve)) {
+            return $this->render('Etudiant/EspaceEtudiant.html.twig', array("nom" => $eleve->getNom(), "prenom" => $eleve->getPrenom()));
+        } elseif (isset($peda)) {
+            return $this->render('Intervenant/EspaceIntervenant.html.twig', array('intervenant' => $peda->getNom()));
+        } else {
             return $this->render('index.html.twig');
+        }
     }
 
 
-    public function deconnexionAction(Request $request, SessionInterface $session) {
-        $eleve = $session->get('eleve');
-        $peda = $session->get('peda');
-
-        if (isset($eleve) || isset($peda)) {
-            $session->invalidate();
-        }
-
+    public function deconnexionAction(Request $request, SessionInterface $session)
+    {
+        $session->invalidate();
         return $this->redirectToRoute('homepage');
 
     }
-
-
 
 
 }

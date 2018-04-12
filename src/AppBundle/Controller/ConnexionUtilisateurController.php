@@ -17,7 +17,6 @@ class ConnexionUtilisateurController extends Controller
 
         $eleve = $this->getDoctrine()->getRepository('AppBundle:Etudiants')->findBy(['email' => $login]);
 
-        $reponse = null;
 
         if (!$eleve) {
             $this->addFlash('erreur',"Mot de passe/Login incorrect");
@@ -27,7 +26,12 @@ class ConnexionUtilisateurController extends Controller
         }
 
         if ($eleve[0]->getMdp() == $mdp) {
-            $reponse = $this->render('Etudiant/EspaceEtudiant.html.twig', array("nom" => $eleve[0]->getNom(), "prenom" => $eleve[0]->getPrenom()));
+
+            $groupes = $this->getDoctrine()->getRepository('AppBundle:Groupes')->findAll();
+
+
+
+            $reponse = $this->render('Etudiant/EspaceEtudiant.html.twig', array("nom" => $eleve[0]->getNom(), "prenom" => $eleve[0]->getPrenom(), "groupes" => $groupes ));
             $session->set('eleve', $eleve[0]);
             return $reponse;
         } else {
@@ -41,23 +45,28 @@ class ConnexionUtilisateurController extends Controller
 
 
 
-    public function connexionInterPedaAction(Request $request)
+    public function connexionInterPedaAction(Request $request, SessionInterface $session)
     {
         $login = $request->request->get('emailPeda');
         $mdp = $request->request->get('passwordPeda');
 
         $intervenant = $this->getDoctrine()->getRepository('AppBundle:Intervenants')->findBy(['email' => $login]);
 
-        $reponse = null;
 
         if(!$intervenant) {
-            return $this->render('index.html.twig', array('erreur' => "Mot de passe/Login incorrect"));
+            $this->addFlash('erreur',"Mot de passe/Login incorrect");
+            return $this->redirectToRoute("homepage");
+
         }
 
         if($intervenant[0]->getMdp() == $mdp) {
-            return $this->render('Intervenant/EspaceIntervenant.html.twig', array('login' => $login) );
+
+            $session->set('intervenant', $intervenant[0]);
+            return $this->render('Intervenant/EspaceIntervenant.html.twig', array('intervenant' => $intervenant[0]->getNom()));
         } else {
-            return $this->render('index.html.twig', array('erreur' => "Mot de passe/Login incorrect"));
+            $this->addFlash('erreur',"Mot de passe/Login incorrect");
+            return $this->redirectToRoute("homepage");
+
         }
 
 

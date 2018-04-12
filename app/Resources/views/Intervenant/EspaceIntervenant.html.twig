@@ -14,7 +14,7 @@
                     <div class="receipt-header">
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="receipt-right">
-                                <h3>Nom Intervenant</h3>
+                                <h3>Nom : {{ intervenant }}</h3>
                             </div>
                         </div>
                     </div>
@@ -49,6 +49,11 @@
                         </tr>
                         </tbody>
                     </table>
+
+                    <div>
+                        <a type="button" class="btn btn-danger pull-right" href="{{ path('deconnexion') }}">Déconnexion</a>
+                    </div>
+
                     <!-- Repondre-->
                     <div class="modal fade" id="Repondre" role="dialog">
                         <div class="modal-dialog">

@@ -17,3 +17,7 @@ ConnexionEleve:
 ConnexionPeda:
     path: /AccueilPeda
     defaults: {_controller: AppBundle:ConnexionUtilisateur:connexionInterPeda}
+
+creerGroupe:
+    path: /creergroupe
+    defaults: {_controller: AppBundle:GestionGroupe:creerGroupe}

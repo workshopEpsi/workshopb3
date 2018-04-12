@@ -2,7 +2,7 @@
 
 {% block body %}
     {% for erreur in app.flashes('erreur')%}
-        <div class="alert alert-danger" role="alert">
+        <div class="customAlert" role="alert">
         {{ erreur }}
         </div>
     {% endfor %}
@@ -14,8 +14,8 @@
             <div class="main-bloc1 ">
                 <div class="logo"></div>
                 <div class="text align-center">
-                    <div class="text-line1"><h1>Espace Etudiant </h1></div>
-                    <div class="text-line1">connectez-vous à votre compte personnel.</div>
+                    <div class="text-line1"><h1>Espace Etudiant</h1></div>
+                    <div class="text-line1">Connectez-vous à votre compte personnel</div>
                 </div>
                 <form method="POST" action="{{path( 'ConnexionEleve') }}">
                 <div class="form-group align-center">
@@ -37,7 +37,7 @@
                 <div class="logo"></div>
                 <div class="text align-center">
                     <div class="text-line1"><h1>Espace Administration</h1> </div>
-                    <div class="text-line1">connectez-vous à votre compte personnel.</div>
+                    <div class="text-line1">Connectez-vous à votre compte personnel</div>
                 </div>
                 <form method="POST" action="{{path( 'ConnexionPeda' )}}">
                 <div class="form-group align-center">
@@ -60,6 +60,12 @@
 {% block stylesheets %}
     <style>
         /*** Tabs*/
+
+        .customAlert{
+            text-align: center;
+            color: red;
+        }
+
         .tabs {
             display: flex;
             flex-wrap: wrap; // make sure it wraps
@@ -148,19 +154,12 @@
             width: 350px;
             height: 60px;
             background-color: #f7f7f7;
-            border-color: #f7f7f7;
-            border-width: 2px;
-            border-style: solid;
-            border-top-left-radius: 1px;
-            border-top-right-radius: 1px;
-            border-bottom-right-radius: 1px;
-            border-bottom-left-radius: 1px;
-            font-family: Montserrat;
-            font-size: 12px;
+            border: 2px solid #f7f7f7;
+            border-radius: 1px;
+            font-size: 1.3em;
             font-style: normal;
             font-weight: 700;
             letter-spacing: 0px;
-            text-transform: uppercase;
             padding-right: 23px;
             padding-left: 23px;
             outline-style: none;

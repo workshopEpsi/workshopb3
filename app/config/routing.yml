@@ -6,10 +6,14 @@ homepage:
     path:   /
     defaults:  { _controller: AppBundle:Default:index}
 
+deconnexion:
+    path: /deconnexion
+    defaults: {_controller: AppBundle:Default:deconnexion}
+
 ConnexionEleve:
-    path: /Accueil
+    path: /AccueilEleve
     defaults: {_controller: AppBundle:ConnexionUtilisateur:connexionEleve}
 
 ConnexionPeda:
-    path: /Accueil
+    path: /AccueilPeda
     defaults: {_controller: AppBundle:ConnexionUtilisateur:connexionInterPeda}

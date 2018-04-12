@@ -28,6 +28,18 @@ class DefaultController extends Controller
     }
 
 
+    public function deconnexionAction(Request $request, SessionInterface $session) {
+        $eleve = $session->get('eleve');
+        $peda = $session->get('peda');
+
+        if (isset($eleve) || isset($peda)) {
+            $session->invalidate();
+        }
+
+        return $this->redirectToRoute('homepage');
+
+    }
+
 
 
 

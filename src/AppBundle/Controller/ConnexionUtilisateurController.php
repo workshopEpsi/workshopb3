@@ -20,7 +20,6 @@ class ConnexionUtilisateurController extends Controller
         $reponse = null;
 
         if (!$eleve) {
-
             $this->addFlash('erreur',"Mot de passe/Login incorrect");
 
             $reponse = $this->redirectToRoute("homepage");
@@ -28,7 +27,7 @@ class ConnexionUtilisateurController extends Controller
         }
 
         if ($eleve[0]->getMdp() == $mdp) {
-            $reponse = $this->render('Etudiant/EspaceEtudiant.html.twig', array('login' => $login));
+            $reponse = $this->render('Etudiant/EspaceEtudiant.html.twig', array("nom" => $eleve[0]->getNom(), "prenom" => $eleve[0]->getPrenom()));
             $session->set('eleve', $eleve[0]);
             return $reponse;
         } else {
@@ -36,7 +35,6 @@ class ConnexionUtilisateurController extends Controller
             $reponse = $this->redirectToRoute("homepage");
             return $reponse;
         }
-
 
     }
 
@@ -53,17 +51,13 @@ class ConnexionUtilisateurController extends Controller
         $reponse = null;
 
         if(!$intervenant) {
-            $reponse = $this->render('index.html.twig', array('erreur' => "Mot de passe/Login incorrect"));
-            return $reponse;
+            return $this->render('index.html.twig', array('erreur' => "Mot de passe/Login incorrect"));
         }
 
-
         if($intervenant[0]->getMdp() == $mdp) {
-            $reponse = $this->render('Intervenant/EspaceIntervenant.html.twig', array('login' => $login) );
-            return $reponse;
+            return $this->render('Intervenant/EspaceIntervenant.html.twig', array('login' => $login) );
         } else {
-            $reponse = $this->render('index.html.twig', array('erreur' => "Mot de passe/Login incorrect"));
-            return $reponse;
+            return $this->render('index.html.twig', array('erreur' => "Mot de passe/Login incorrect"));
         }
 
 

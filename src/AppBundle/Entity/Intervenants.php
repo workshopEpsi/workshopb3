@@ -26,6 +26,30 @@ class Intervenants
      */
     private $prenom;
 
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=25, nullable=false)
+     */
+    private $email;
+
+    /**
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param string $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
     /**
      * @var string
      *

@@ -1,6 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    {% if erreur is defined%}
+        <div class="alert alert-danger" role="alert">
+        {{ erreur }}
+        </div>
+
+    {% endif %}
     <div class="tabs">
         <input type="radio" name="tabs" id="tabone" checked="checked">
         <label for="tabone">Espace Etudiant</label>
@@ -11,16 +17,17 @@
                     <div class="text-line1"><h1>Espace Etudiant </h1></div>
                     <div class="text-line1">connectez-vous à votre compte personnel.</div>
                 </div>
+                <form method="POST" action="{{path( 'AccueilEleve') }}">
                 <div class="form-group align-center">
-                    <input class="form-control align-center field1" type="text" id="email" name="_email" value="" placeholder="Votre email"/>
+                    <input class="form-control align-center field1" type="email" id="email" name="_email" value="" placeholder="Votre email" required>
                 </div>
                 <div class="form-group align-center">
-                    <input class="form-control align-center field2" type="password" id="password" name="_password" value="" placeholder="Votre mot de passe"/>
+                    <input class="form-control align-center field2" type="password" id="password" name="_password" value="" placeholder="Votre mot de passe" required>
                 </div>
-                <input type="hidden" name="_csrf_token" value="UoOIxPdfb_Pb_hP9kFQLlZVxELLya9bR230psSACvy8">
                 <div class="line-cta align-center">
                     <input class="btn btn-primary" type="submit" name="login" value="Connexion">
                 </div>
+                </form>
             </div>
         </div>
         <input type="radio" name="tabs" id="tabtwo">
@@ -32,19 +39,22 @@
                     <div class="text-line1"><h1>Espace Administration</h1> </div>
                     <div class="text-line1">connectez-vous à votre compte personnel.</div>
                 </div>
+                <form method="POST" action="{{path( 'AccueilPeda' )}}">
                 <div class="form-group align-center">
-                    <input class="form-control align-center field1" type="text" id="email" name="_email" value="" placeholder="Votre email"/>
+                    <input class="form-control align-center field1" type="email" id="email" name="_email" value="" placeholder="Votre email" required>
                 </div>
                 <div class="form-group align-center">
-                    <input class="form-control align-center field2" type="password" id="password" name="_password" value="" placeholder="Votre mot de passe"/>
+                    <input class="form-control align-center field2" type="password" id="password" name="_password" value="" placeholder="Votre mot de passe" required>
                 </div>
-                <input type="hidden" name="_csrf_token" value="UoOIxPdfb_Pb_hP9kFQLlZVxELLya9bR230psSACvy8">
                 <div class="line-cta align-center">
                     <input class="btn btn-primary" type="submit" name="login" value="Connexion">
                 </div>
+                </form>
             </div>
         </div>
     </div>
+
+
 {% endblock %}
 
 {% block stylesheets %}

@@ -14,13 +14,14 @@ class DefaultController extends Controller
 
     public function indexAction(Request $request, SessionInterface $session)
     {
-//        if connected
-//            if etudiant
-//               return $this->render('Etudiant/EspaceEtudiant.html.twig');
-//            else
-//                return $this->render('Intervenant/EspaceIntervenant.html.twig');
-//          else
-//            return $this->render('connexion.html.twig');
+        $eleve = $session->get('eleve');
+        $peda = $ session->get('peda');
+
+        if (isset($eleve))
+               return $this->render('Etudiant/EspaceEtudiant.html.twig');
+        elseif (isset($peda))
+               return $this->render('Intervenant/EspaceIntervenant.html.twig');
+        else
             return $this->render('index.html.twig');
     }
 

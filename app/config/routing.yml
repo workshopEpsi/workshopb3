@@ -5,3 +5,13 @@ app:
 homepage:
     path:   /
     defaults:  { _controller: AppBundle:Default:index}
+
+AccueilEleve:
+
+    path: /Accueil
+    defaults: {_controller: AppBundle:ConnexionUtilisateur:connexionEleve}
+
+AccueilPeda:
+
+    path: /Accueil
+    defaults: {_controller: AppBundle:ConnexionUtilisateur:connexionInterPeda}
